@@ -14,6 +14,12 @@ class Vigenere {
             return String.fromCharCode((letter.charCodeAt(0) + this.key.charCodeAt(index % this.key.length) - 130) % 26 + 65)
         }).join("");
     }
+
+    decrypt(cipherText: string): string {
+        return Array.prototype.map.call(Vigenere.formatText(cipherText), (letter: string, index: number) => {
+            return String.fromCharCode((letter.charCodeAt(0) - this.key.charCodeAt(index % this.key.length) + 26) % 26 + 65)
+        }).join("");
+    }
 }
 
 let original: string = "DES AST RES";
@@ -24,3 +30,8 @@ let vig: Vigenere = new Vigenere("SOL");
 let encoded: string = vig.encrypt(original);
 
 console.log(`Mensaje cifrado: ${encoded}`);
+
+let decoded: string = vig.decrypt(encoded);
+
+console.log(`Mensaje descifrado: ${decoded}`);
+
