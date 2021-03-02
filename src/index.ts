@@ -22,11 +22,11 @@ class Vigenere {
     }
 }
 
-let original: string = "DES AST RES";
+let original: string = "PRIMERTRABAJOCOMOCRIPTOANALISTA";
 
 console.log(`Mensaje original: ${original}`);
 
-let vig: Vigenere = new Vigenere("SOL");
+let vig: Vigenere = new Vigenere("RIVERBANK");
 let encoded: string = vig.encrypt(original);
 
 console.log(`Mensaje cifrado: ${encoded}`);
